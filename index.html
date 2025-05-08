@@ -9,14 +9,17 @@
         <div>
             <div>
                 <h1>
+                    <!--Titre-->
                     La demie vie d'une morue
                     <img src="images/logo.png" style="height: 45px; width: 50px; offset-left: 30px; align-image: right;" />
                 </h1>
             </div>
         </div>
+        <!--Page donation-->
         <div class="donationCote">
             
         </div>
+        <!--Description du jeu-->
         <div class="messageDescription">
             <p class="messageText">
                 Une morue est prise au dessus d'un produit chimique mortelle au poissons.
@@ -27,21 +30,32 @@
         </div>
         <div class="input">
             <form id = "form">
-
-                <input id="nommerMorue" type=text placeholder="Nommer Votre Morue" ><br>
-                <input type="submit" value="Entrez dans le jeu" href= "lvl1.html">
+                <!--Boîte type text pour nommer le Morue-->
+                <input id="nommerMorue" type=text placeholder="Nommer Votre Morue">
+                <br><br>
+                <!--Boîte submit pour entrez dans le jeu-->
+                <input type="submit" value="Entrez dans le jeu" onclick="nomCheck()">
             </form>
         </div>
             
         <script>
-            const form = document.getElementById("form");
-            const nom = document.getElementById("nommerMorue");
+            const form = document.getElementById("form")
+            const nom = document.getElementById("nommerMorue")
             form.addEventListener("submit", function(e) {
-                e.preventDefault();
-                div nomValue = nom.value;
-                window.localStorage.setItem('nom-morue' = nomValue);
-                window.location.href = "lvl1.html";
-            });
+                e.preventDefault()
+                div nomValue = nom.value
+                localStorage.setItem("nom-morue" = nomValue)
+                window.location.href = "lvl1.html"
+            })
+            
+            //Fonction qui 
+            function nomCheck(nom) {
+                if (nom.length >= 2) {
+                    
+                } else {
+                    alert("Ton nom doit être plus que 2 caractères.")
+                }
+            }
         </script>
     </body>
 </html>
