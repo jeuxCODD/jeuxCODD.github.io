@@ -1,5 +1,47 @@
 <html>
-  <body>
-    <h1>Hi</h1>
-  </body>
+    <head>
+        <meta charset = "UTF8">
+        <link rel="stylesheet" href="css/styleIndex.css" />
+        <title>DemieVieMorue</title>
+    </head>
+    
+    <body>
+        <div>
+            <div>
+                <h1>
+                    La demie vie d'une morue
+                    <img src="images/logo.png" style="height: 45px; width: 50px; offset-left: 30px; align-image: right;" />
+                </h1>
+            </div>
+        </div>
+        <div class="donationCote">
+            
+        </div>
+        <div class="messageDescription">
+            <p class="messageText">
+                Une morue est prise au dessus d'un produit chimique mortelle au poissons.
+                Tu dois sauver la morue par balancer les bases et les acides jusqu'à le PH 
+                qui est sauf pour les poissons. Les morues sont une èspèce de poissons en danger,
+                donc tu peux mettre une donation envers les morues atlantiques sur le site web à la gauche.
+            </p>
+        </div>
+        <div class="input">
+            <form id = "form">
+
+                <input id="nommerMorue" type=text placeholder="Nommer Votre Morue" ><br>
+                <input type="submit" value="Entrez dans le jeu" href= "lvl1.html">
+            </form>
+        </div>
+            
+        <script>
+            const form = document.getElementById("form");
+            const nom = document.getElementById("nommerMorue");
+            form.addEventListener("submit", function(e) {
+                e.preventDefault();
+                div nomValue = nom.value;
+                window.localStorage.setItem('nom-morue' = nomValue);
+                window.location.href = "lvl1.html";
+            });
+        </script>
+    </body>
 </html>
