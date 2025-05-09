@@ -1,13 +1,28 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset = "UTF8">
-    </head>
-    <body>
-        <div>Nom de votre Morue:<br><span id="nom-morue"></span> </div>
-        <script>
-            
-            const morueNom = localStorage.getItem("nom-morue")
-            document.getElementById("nom-morue").textContent = morueNom
-        </script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    
+</head>
+<body>
+  <div class=header>  
+    <h1>Aidez <span id="morue-display"></span> à s'échapper! <a class="menu" href="index.html">Biographie</a></h1> 
+  </div>
+  <div class=meter>
+    <!--css: hover, 
+     background=black, transparency=90%, border= smthidk, border radius, hover
+     script: onclick(function to mesure ph or salinity)-->
+    <h2>Ph meter</h2>
+    <img src="https://cdn-icons-png.flaticon.com/512/4260/4260113.png" width=50px/>
+  </div>
+  <div class=game>
+    
+  </div>
+
+    <script>
+      var morueNom = localStorage.getItem("nom-morue");
+      var affiche = document.getElementById("morue-display");
+      affiche.innerHTML += morueNom;
+    </script>
+</body>
 </html>
