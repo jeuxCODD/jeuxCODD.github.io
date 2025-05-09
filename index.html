@@ -30,7 +30,7 @@
             </p>
         </div>
         <div class="input">
-            <form id = "form">
+            <form>
                 <!--Boîte type text pour nommer le Morue-->
                 <input id="nommerMorue" type=text placeholder="Nommer Votre Morue">
                 <br><br>
@@ -42,8 +42,7 @@
         <script>
             /*Fonction qui vérifie si le nom a plus que 2 caractères. Si oui, tu entre au niveau 1
             si non, il y a un alert et du doit remettre le nom*/
-            function nomCheck() 
-                let form = document.getElementById("form")
+            function nomCheck() {
                 let nom = document.getElementById("nommerMorue")
                 if (nom.length >= 2) {
                     console.log("dasd")
