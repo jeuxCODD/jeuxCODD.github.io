@@ -8,7 +8,7 @@ body {
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 5em;
     color: beige;
     text-align: center;
 }
@@ -35,6 +35,7 @@ iframe {
     color: #00BFFF;
     padding: 50px;
     opacity: 1;
+    font-size: 1.9em;
 }
 .input{
     text-align: center;
