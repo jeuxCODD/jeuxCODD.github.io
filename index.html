@@ -7,16 +7,15 @@
     
     <body>
         <div>
-            <div>
-                <h1>
-                    <!--Titre-->
-                    La demie vie d'une morue
-                    <img src="images/logo.png" style="height: 45px; width: 50px; offset-left: 30px; align-image: right;" />
-                </h1>
+            <h1>
+                <!--Titre-->
+                La demie vie d'une morue
+                <img src="images/logo.png" style="height: 45px; width: 50px; offset-left: 30px; align-image: right;" />
+            </h1>
         </div>
         <!--Description du jeu-->
         <div class="messageDescription">
-             <p class="messageText">
+            <p class="messageText">
                 Une morue est prise au dessus d'un produit chimique mortelle.
                 Tu dois sauver la morue par balancer les bases et les acides jusqu'à le PH 
                 qui est sauf pour les poissons. Les morues sont une èspèce de poissons en danger,
@@ -27,6 +26,7 @@
         <div class="donationCote">
              <iframe src="https://davidsuzuki.org/wp-content/uploads/2019/02/left-off-the-list-profile-of-marine-and-northern-species-denied-listing.pdf">
              </iframe>
+            
         </div>
         <div class="input">
             <form>
@@ -42,16 +42,14 @@
             /*Fonction qui vérifie si le nom a plus que 2 caractères. Si oui, tu entre au niveau 1
             si non, il y a un alert et du doit remettre le nom*/
             function nomCheck() {
-                let nom = document.getElementById("nommerMorue")
-                if (nom.length >= 2) {
-                    console.log("dasd")
-                    //Enregistre le nom dans LocalStorage
-                    let nomValue = nom.value
+                let nomValue = nom.value
+                if (nomValue.length > 2) {
                     window.localStorage.setItem('nom-morue', nomValue);
                     window.location.assign("lvlun.html")
                 } else {
-                    alert("Ton nom doit être plus que 2 caractères.")
+                    alert("Le nom de votre morue doit être plus que 2 caractères")
                 }
+                    
             }
         </script>
     </body>
