@@ -44,12 +44,8 @@
             si non, il y a un alert et du doit remettre le nom*/
             function nomCheck() {
                 let nomValue = document.getElementById("nommerMorue").value
-                if (nomValue.length > 2) {
-                    window.localStorage.setItem('nom-morue', nomValue);
-                    window.location.assign("lvl1.html")
-                } else {
-                    alert("Le nom de votre morue doit être plus que 2 caractères")
-                }
+                window.localStorage.setItem('nom-morue', nomValue);
+                window.location.assign("lvl1.html");
                     
             }
         </script>
