@@ -11,55 +11,6 @@
                 <!--Titre-->
                 La demie vie d'une morue
                 <img src="images/logo.png" style="height: 45px; width: 50px; offset-left: 30px; align-image: right;" />
-                <img class="parametres" img src="images/gear.png" style="height: 55px; width: 55px; offset-left: 30px; align-image: right;" />
-            </h1>
-        </div>
-        <!--Description du jeu-->
-        <div class="messageDescription">
-            <p class="messageText">
-                Une morue est prise au dessus d'un produit chimique mortelle.
-                Tu dois sauver la morue par balancer les bases et les acides jusqu'à le PH 
-                qui est sauf pour les poissons. Les morues sont une èspèce de poissons en danger,
-                donc tu peux mettre une donation envers les morues atlantiques sur le site web à la gauche.
-            </p>
-        </div>
-        <!--Page donation-->
-        <div class="donationCote">
-             <iframe src="https://davidsuzuki.org/wp-content/uploads/2019/02/left-off-the-list-profile-of-marine-and-northern-species-denied-listing.pdf#page=15">
-             </iframe>
-            
-        </div>
-        <div class="input">
-            <form>
-                <!--Boîte type text pour nommer le Morue-->
-                <input id="nommerMorue" type="text" placeholder="Nommer Votre Morue">
-                <br><br>
-                <!--Boîte submit pour entrez dans le jeu-->
-                <input type="button" value="Entrez dans le jeu" onclick="nomCheck()">
-            </form>
-        </div>
-        <script>
-            function nomCheck() {
-                let nomValue = document.getElementById("nommerMorue").value;
-                window.localStorage.setItem('nom-morue', nomValue);
-                alert("Set Value");
-                window.location.assign("lvl1.html"); 
-            }
-        </script>
-    </body>
-</html><html>
-    <head>
-        <meta charset = "UTF8">
-        <link rel="stylesheet" href="css/styleIndex.css" />
-        <title>DemieVieMorue</title>
-    </head>
-    
-    <body>
-        <div class=topnav>
-            <h1>
-                <!--Titre-->
-                La demie vie d'une morue
-                <img src="images/logo.png" style="height: 45px; width: 50px; offset-left: 30px; align-image: right;" />
                 <a href="parametre.html">
                     <img class="parametres" img src="images/gear.png" style="height: 55px; width: 55px; offset-left: 30px; align-image: right;"/>
                 </a>
