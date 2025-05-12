@@ -1,0 +1,32 @@
+body{
+  background-image: url("https://i.pinimg.com/736x/97/db/df/97dbdf4c28247b913322bb4e124f482a.jpg");
+  background-size: cover;
+}
+
+h1{
+  font-size: 30px;
+  text-decoration: none;
+}
+
+accueil{
+  text-align: center;
+}
+
+.topnav{
+    overflow: hidden;
+    background-color: clear;
+}
+.topnav a{
+    text-align: center;        
+    text-decoration: none;
+    color: white;
+}
+.topnav a:hover{
+    background-color: black ;
+    color: white;
+    opacity: 0.3;
+    
+input[type=checkbox]{
+
+
+}
