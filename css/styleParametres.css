@@ -1,5 +1,5 @@
 body{
-  background-image: src="images/backgroundSettings.jpg";
+  background-image: src=url("https://github.com/jeuxCODD/jeuxCODD.github.io/blob/main/images/backgroundSettings.jpg?raw=true");
   background-size: cover;
 }
 
