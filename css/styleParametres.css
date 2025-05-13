@@ -1,5 +1,5 @@
 body{
-  background-image: src=images/backgroundSettings.jpg ;
+  background-image: src="images/backgroundSettings.jpg" ;
   background-size: cover;
 }
 
