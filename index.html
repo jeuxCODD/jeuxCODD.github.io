@@ -45,8 +45,13 @@
             si non, il y a un alert et du doit remettre le nom*/
             function nomCheck() {
                 let nomValue = document.getElementById("nommerMorue").value
-                window.localStorage.setItem('nom-morue', nomValue);
-                window.location.assign("lvl1.html");
+                if (nomValue <= 25){
+                    window.localStorage.setItem('nom-morue', nomValue);
+                    window.location.assign("lvl1.html");
+                } else {
+                    alert("Votre nom doit être moins que 25 caractères")
+                }
+                
                     
             }
         </script>
