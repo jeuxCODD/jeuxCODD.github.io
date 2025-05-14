@@ -49,8 +49,8 @@
                 `Entrez la bonne réponse pour ${puzzleId} :`;
                 document.getElementById("input-field").value = "";
             }
-            console.log(currentPuzzle)
-            function submitInput(){
+            function submitInput(){  
+                console.log(currentPuzzle)
                 if (currentPuzzle == 'valveAcide'){
                     var acide = parseFloat(document.getElementById("input-field"))
                     montantAcide += acide
