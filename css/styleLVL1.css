@@ -1,1 +1,15 @@
-
+body{
+    background-image: url("https://static6.depositphotos.com/1000352/541/i/450/depositphotos_5419006-stock-photo-green-brick-wall-texture.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+h1{
+    color: white;
+    text-align: center;
+}
+h2{
+    color: white;
+}
+.game{
+text-align: center;
+}
