@@ -45,7 +45,16 @@
         https://stackoverflow.com/questions/67572638/read-a-text-file-and-save-it-into-a-list-javascript
         et le blacklist à partire d'un liste à été crée par moi et le liste est tiré de http://www.bannedwordlist.com/ 
         le code initiale est le suivant et a completement été crée par owen:
-        
+             //Fonction qui vérifie si le nom a plus que 2 caractères. Si oui, tu entre au niveau 1
+            //si non, il y a un alert et du doit remettre le nom
+            function nomCheck() {
+                let nomValue = document.getElementById("nommerMorue").value
+                if (nomValue.length <= 25 || nomValue.toLowerCase == "tung tung tung tung tung tung tung sahur"){
+                    window.localStorage.setItem('nom-morue', nomValue);
+                    window.location.assign("lvl1.html");
+                } else {
+                    alert("Votre nom doit être moins que 25 caractères")
+                }
         le tout est mis ensemble
         par un certain "chatGPT" */
             
