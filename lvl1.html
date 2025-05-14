@@ -32,9 +32,6 @@
         </div>
         <script>
             var pH = (Math.random() * 14).toFixed(2)
-            if ((pH < 8) && (pH > 7)){
-                pH += 3
-            }
             console.log(pH)
             var morueNom = localStorage.getItem("nom-morue");
             var affiche = document.getElementById("morue-display");
