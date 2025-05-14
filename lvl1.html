@@ -52,12 +52,15 @@
             function submitInput(){  
                 console.log(currentPuzzle)
                 if (currentPuzzle == 'valveAcide'){
-                    var acide = parseFloat(document.getElementById("input-field"))
-                    console.log(acide)
-                    montantAcide += acide
+                    var acide = parseFloat(document.getElementById("input-field").value)
+                    if (!isNaN(acide)) {
+                        montantAcide += acide
+                    }
                 } else if (currentPuzzle == 'valveBase'){
-                    var base = parseFloat(document.getElementById("input-field"))
+                    var base = parseFloat(document.getElementById("input-field").value)
+                    if (!isNaN(base)) {
                     montantBase+= base
+                    }
                 }
                 pH = ((pHInit * 100) + (montantBase * 14) + (montantAcide * 0)) / (100 + montantBase + montantAcide)
                 console.log(pH)
