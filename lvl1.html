@@ -44,8 +44,8 @@
 
             function openDiv(puzzleId) {
                 currentPuzzle = puzzleId;
-                document.getElementById("input-container").classList.add("visible");
-                document.getElementById("feedback").innerText = "";
+                var div = document.getElementById("input-container");
+                div.style.display = "block"
                 document.getElementById("input-label").innerText =
                 `Entrez la bonne réponse pour ${puzzleId} :`;
                 document.getElementById("input-field").value = "";
