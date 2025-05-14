@@ -35,7 +35,7 @@
             <button onclick="submitInput()">Valider</button>
         </div>
         <script>
-            var pH = Math.round(Math.random() * 14)
+            var pH = (Math.random() * 14).toFixed(2)
             console.log(pH)
             var morueNom = localStorage.getItem("nom-morue");
             var affiche = document.getElementById("morue-display");
