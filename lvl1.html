@@ -36,7 +36,11 @@
             var morueNom = localStorage.getItem("nom-morue");
             var affiche = document.getElementById("morue-display");
             affiche.innerHTML += morueNom
-
+            
+            var currentPuzzle = ""
+            var montantAcide = 0
+            var montantBase = 0
+            var pHInit = pH
 
             function openDiv(puzzleId) {
                 currentPuzzle = puzzleId;
@@ -45,6 +49,19 @@
                 `Entrez la bonne réponse pour ${puzzleId} :`;
                 document.getElementById("input-field").value = "";
             }
+            console.log(currentPuzzle)
+            function submitInput(){
+                if (currentPuzzle == 'valveAcide'){
+                    var acide = parseFloat(document.getElementById("input-field"))
+                    montantAcide += acide
+                } else if (currentPuzzle == 'valveBase'){
+                    var base = parseFloat(document.getElementById("input-field"))
+                    montantBase+= base
+                }
+                pH = ((pHInit * 100) + (montantBase * 14) + (montantAcide * 0)) / (100 + montantBase + montantAcide)
+                console.log(pH)
+            }
+                    
         </script>
     </body>
 </html>
