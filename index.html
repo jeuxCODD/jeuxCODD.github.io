@@ -34,7 +34,17 @@
         <div class="input">
             <form>
                 <!--Boîte type text pour nommer le Morue-->
-                <input id="nommerMorue" type="text" placeholder="Nommer Votre Morue">
+                <input 
+                    id="nommerMorue" 
+                    type="text" 
+                    placeholder="Nommer Votre Morue"
+                    onkeydown="
+                        if (event.key === 'Enter' || event.keyCode === 13) {
+                            event.preventDefault()
+                            nomCheck()
+                        }
+                    "
+                >
                 <br><br>
                 <!--Boîte submit pour entrez dans le jeu-->
                 <input type="button" value="Entrez dans le jeu" onclick="nomCheck()">
