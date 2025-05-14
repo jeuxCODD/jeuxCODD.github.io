@@ -41,10 +41,6 @@
             </form>
         </div>
         <script>
-        /* le code suivant est un test. La fonction pour crée un liste à partire d'un fichier à été pris de:
-        https://stackoverflow.com/questions/67572638/read-a-text-file-and-save-it-into-a-list-javascript
-        et le blacklist à partire d'un liste à été crée par moi et le liste est tiré de http://www.bannedwordlist.com/ 
-        le code initiale est le suivant et a completement été crée par owen:
              //Fonction qui vérifie si le nom a plus que 2 caractères. Si oui, tu entre au niveau 1
             //si non, il y a un alert et du doit remettre le nom
             function nomCheck() {
@@ -54,116 +50,8 @@
                     window.location.assign("lvl1.html");
                 } else {
                     alert("Votre nom doit être moins que 25 caractères")
-                }
-        le tout est mis ensemble
-        par un certain "chatGPT" */
-            
-          // 1) Prepare an array to hold your blacklist.
-
-          let blacklist = [];
-    
-          // 2) On page load, fetch the remote word‑list and split into lines.
-    
-          (async function loadBlacklist() {
-    
-            try {
-    
-              const res = await fetch("http://www.bannedwordlist.com/lists/swearWords.txt");
-    
-              if (!res.ok) throw new Error(res.statusText);
-    
-              const text = await res.text();
-    
-              blacklist = text.split(/\r\n|\n/).map(w => w.toLowerCase());
-    
-            } catch (e) {
-    
-              console.warn("Could not load blacklist:", e);
-    
+                }     
             }
-    
-          })();
-    
-    
-    
-          // 3) Your filter function
-    
-          function filterBlacklistedWords(text, blacklist) {
-    
-            return text
-    
-              .split(/\s+/)
-    
-              .map(word => {
-    
-                const lower = word.toLowerCase();
-    
-                return blacklist.includes(lower)
-    
-                  ? "*".repeat(word.length)
-    
-                  : word;
-    
-              })
-    
-              .join(" ");
-    
-          }
-    
-    
-    
-          // 4) The name‑check function become async so we can await the blacklist
-    
-          async function nomCheck() {
-    
-            const inputEl = document.getElementById("nommerMorue");
-    
-            let nomValue = inputEl.value.trim();
-    
-    
-    
-            // wait for blacklist to load (if it isn’t already)
-    
-            if (blacklist.length === 0) {
-    
-              // a simple retry; you could do better with a Promise
-    
-              await new Promise(r => setTimeout(r, 200));
-    
-            }
-    
-    
-    
-            // apply your existing length check
-    
-            if (nomValue.length > 0 && nomValue.length < 25) {
-    
-              // filter out any forbidden words
-    
-              const filtered = filterBlacklistedWords(nomValue, blacklist);
-    
-    
-    
-              // store the *filtered* version
-    
-              window.localStorage.setItem("nom-morue", filtered);
-    
-    
-    
-              // go to level 1
-    
-              window.location.assign("lvl1.html");
-    
-            } else {
-    
-              alert("Votre nom doit être entre 1 et 24 caractères.");
-    
-    
-                    }
-                    
-                        
-                }
-
         </script>
     </body>
 </html>
