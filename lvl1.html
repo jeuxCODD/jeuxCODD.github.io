@@ -75,9 +75,23 @@
             }
 
             function submitPH() {
-                if (pH < 8 && pH > 7) {
-                    
-                }
+              let id = null;
+              const elem = document.getElementById("morue-image");   
+              let pos = 0;
+              clearInterval(id);
+              id = setInterval(frame, 5);
+              elem.style.transform.rotate("90deg")
+              function frame() {
+                 if (pos == 400) {
+                    clearInterval(id);
+                } else if (pos == 200){
+                     elem.style.transform.rotate("0deg");
+                 } else {
+                  pos++; 
+                  elem.style.top = pos + "px"; 
+                  elem.style.left = pos + "px"; 
+                 }
+              }
             }
         </script>
     </body>
