@@ -31,9 +31,12 @@
             <input type="number" id="input-field" min="0">
             <button onclick="submitInput()">Valider</button>
         </div>
+        <div id="niveau-pH" >
+        </div>
         <script>
             var pH = (Math.random() * 14).toFixed(2)
             console.log(pH)
+            var output = document.getElementById("niveau-pH")
             var morueNom = localStorage.getItem("nom-morue");
             var affiche = document.getElementById("morue-display");
             affiche.innerHTML += morueNom
@@ -42,6 +45,7 @@
             var montantAcide = 0
             var montantBase = 0
             var pHInit = pH
+            output.innerHTML = pH + " pH"
 
             function openDiv(puzzleId) {
                 currentPuzzle = puzzleId;
@@ -64,6 +68,7 @@
                     }
                 }
                 pH = ((pHInit * 100) + (montantBase * 14) + (montantAcide * 0)) / (100 + montantBase + montantAcide)
+                output.innerHTML = pH + " pH"
                 console.log(pH)
             }
                     
