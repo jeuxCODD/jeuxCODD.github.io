@@ -68,7 +68,7 @@
                     }
                 }
                 pH = ((pHInit * 100) + (montantBase * 14) + (montantAcide * 0)) / (100 + montantBase + montantAcide)
-                output.innerHTML = pH + " pH"
+                output.innerHTML = pH.toFixed(2) + " pH"
                 console.log(pH)
             }
                     
