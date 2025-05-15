@@ -16,14 +16,14 @@ h2{
     text-align: center;
     position: fixed;
     display: inline-block;
-    background-color: blue;
+    background-color: white;
     border-radius: 10px;
     border: 5px solid;
     border-color: black;
     width: 30%;
     height: 30%;
-    top: 50%;
-    left: 50%;
+    top: 32%;
+    left: 32%;
     z-index: 10;
     
 }
