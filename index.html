@@ -459,6 +459,7 @@
       "aG9tbw==",
       "bmlnZXI=",
       "bmlnZXJz",];
+      //certains mots on été ajouté par nous
             this.evasionPatterns = [
               { pattern: /4/gi, replacement: "a" },
               { pattern: /\$/gi, replacement: "s" },
@@ -467,7 +468,14 @@
               { pattern: /1/gi, replacement: "i" },
               { pattern: /!/gi, replacement: "i" },
               { pattern: /@/gi, replacement: "a" },
+              { pattern: /é/gi, replacement: "e" },
+              { pattern: /è/gi, replacement: "e" },
+              { pattern: /ê/gi, replacement: "e" },
+              { pattern: /3/gi, replacement: "e" },
+              { pattern: /µ/gi, replacement: "u" },
+              { pattern: /\|/gi, replacement: "i" },
             ];
+            //Nous avons ajouté les 6 derniers remplacements
           }
           decodeBase64(encoded) {
             try { return atob(encoded); } catch(e) { return encoded; }
