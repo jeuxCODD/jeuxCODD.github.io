@@ -40,9 +40,9 @@
         <img src="images/morue.png">
         <script>
         
-          function fermerBox(){
-            var fermerBoite = document.getElementById("input-container")
-            fermerBoite.style.display = "none"
+            function fermerBox(){
+                var fermerBoite = document.getElementById("input-container")
+                fermerBoite.style.display = "none"
             
             }
         
@@ -85,11 +85,6 @@
                 pH = ((pHInit * 100) + (montantBase * 14) + (montantAcide * 0)) / (100 + montantBase + montantAcide)
                 output.innerHTML = pH.toFixed(2) + " pH"
                 console.log(pH)
-            }
-
-            function submitPH() {
-                if (pH < 8 && pH > 7) {
-                }
             }
         </script>
     </body>
