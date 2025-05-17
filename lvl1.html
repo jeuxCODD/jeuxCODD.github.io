@@ -74,13 +74,16 @@
                 }
             }
             function submitInput(){  
-                console.log(currentPuzzle);
-                const val = parseFloat(document.getElementById("input-field").value);
-                if (!isNaN(val)) {
-                    if (currentPuzzle === 'valveAcide') {
-                        montantAcide += val;
-                    } else if (currentPuzzle === 'valveBase') {
-                        montantBase += val;
+                console.log(currentPuzzle)
+                if (currentPuzzle == 'valveAcide'){
+                    var acide = parseFloat(document.getElementById("input-field").value)
+                    if (!isNaN(acide)) {
+                        montantAcide += acide
+                    }
+                } else if (currentPuzzle == 'valveBase'){
+                    var base = parseFloat(document.getElementById("input-field").value)
+                    if (!isNaN(base)) {
+                    montantBase+= base
                     }
                 }
                 pH = ((pHInit * 100) + (montantBase * 14) + (montantAcide * 0)) / (100 + montantBase + montantAcide)
