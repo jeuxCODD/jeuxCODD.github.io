@@ -6,7 +6,9 @@ body {
     /*overflow : hidden; */
     
 }
-
+p{
+    color: #00BFFF;
+}
 h1 {
     font-size: 30px;
     color: beige;
