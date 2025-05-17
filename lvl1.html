@@ -41,55 +41,55 @@
         <script>
         
             function fermerBox(){
-                const fermerBoite = document.getElementById("input-container")
-                fermerBoite.style.display = "none"
+                const fermerBoite = document.getElementById("input-container");
+                fermerBoite.style.display = "none";
             
             }
         
         
         
-            var pH = (Math.random() * 14).toFixed(2)
-            console.log(pH)
-            var output = document.getElementById("niveau-pH")
+            var pH = (Math.random() * 14).toFixed(2);
+            console.log(pH);
+            var output = document.getElementById("niveau-pH");
             var morueNom = localStorage.getItem("nom-morue");
             var affiche = document.getElementById("morue-display");
-            affiche.innerHTML += morueNom
+            affiche.innerHTML += morueNom;
             
-            var currentPuzzle = ""
-            var montantAcide = 0
-            var montantBase = 0
-            var pHInit = pH
-            output.innerHTML = pH + " pH"
+            var currentPuzzle = "";
+            var montantAcide = 0;
+            var montantBase = 0;
+            var pHInit = pH;
+            output.innerHTML = pH + " pH";
 
             function openDiv(puzzleId) {
                 currentPuzzle = puzzleId;
                 var div = document.getElementById("input-container");
                 div.style.display = "block";
                 if (currentPuzzle == 'A') {
-                    document.getElementById("input-label").textContent = "Entrez un montant de moles d'acide"
+                    document.getElementById("input-label").textContent = "Entrez un montant de moles d'acide";
                     document.getElementById("input-field").value = "";
                 } else if (currentPuzzle == 'B') {
-                    document.getElementById("input-label").textContent = "Entrez un montant de moles de base"
+                    document.getElementById("input-label").textContent = "Entrez un montant de moles de base";
                     document.getElementById("input-field").value = "";
                 }
             }
             function submitInput(){  
-                console.log(currentPuzzle)
+                console.log(currentPuzzle);
                 if (currentPuzzle == 'valveAcide'){
-                    var acide = parseFloat(document.getElementById("input-field").value)
-                    console.log("acide level: " + acide)
+                    var acide = parseFloat(document.getElementById("input-field").value);
+                    console.log("acide level: " + acide);
                     if (!isNaN(acide)) {
-                        montantAcide += acide
+                        montantAcide += acide;
                     }
                 } else if (currentPuzzle == 'valveBase'){
-                    var base = parseFloat(document.getElementById("input-field").value)
+                    var base = parseFloat(document.getElementById("input-field").value);
                     if (!isNaN(base)) {
-                    montantBase+= base
+                    montantBase+= base;
                     }
                 }
-                pH = ((pHInit * 100) + (montantBase * 14) + (montantAcide * 0)) / (100 + montantBase + montantAcide)
-                output.innerHTML = pH.toFixed(2) + " pH"
-                console.log(pH)
+                pH = ((pHInit * 100) + (montantBase * 14) + (montantAcide * 0)) / (100 + montantBase + montantAcide);
+                output.innerHTML = pH.toFixed(2) + " pH";
+                console.log(pH);
             }
         </script>
     </body>
