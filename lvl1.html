@@ -41,7 +41,7 @@
         <script>
         
             function fermerBox(){
-                var fermerBoite = document.getElementById("input-container")
+                const fermerBoite = document.getElementById("input-container")
                 fermerBoite.style.display = "none"
             
             }
@@ -64,22 +64,18 @@
             function openDiv(puzzleId) {
                 currentPuzzle = puzzleId;
                 var div = document.getElementById("input-container");
-                document.getElementById("input-label").innerText =
-                `Entrez la bonne réponse pour ${puzzleId} :`;
-                document.getElementById("input-field").value = "".;
-
+                div.style.display = "block";
+                document.getElementById("input-label").innerText = `Entrez la bonne réponse pour ${puzzleId} :`;
+                document.getElementById("input-field").value = "";
             }
             function submitInput(){  
-                console.log(currentPuzzle)
-                if (currentPuzzle == 'valveAcide'){
-                    var acide = parseFloat(document.getElementById("input-field").value)
-                    if (!isNaN(acide)) {
-                        montantAcide += acide
-                    }
-                } else if (currentPuzzle == 'valveBase'){
-                    var base = parseFloat(document.getElementById("input-field").value)
-                    if (!isNaN(base)) {
-                    montantBase+= base
+                console.log(currentPuzzle);
+                const val = parseFloat(document.getElementById("input-field").value);
+                if (!isNaN(val)) {
+                    if (currentPuzzle === 'valveAcide') {
+                        montantAcide += val;
+                    } else if (currentPuzzle === 'valveBase') {
+                        montantBase += val;
                     }
                 }
                 pH = ((pHInit * 100) + (montantBase * 14) + (montantAcide * 0)) / (100 + montantBase + montantAcide)
