@@ -46,11 +46,13 @@
             
             }
         
-        
-        
             var pH = (Math.random() * 14).toFixed(2);
+            while (pH < 8.5 && pH > 6.5){
+                pH = (Math.random() * 14).toFixed(2);
+            }
             console.log(pH);
-            var output = document.getElementById("niveau-pH");
+            var pHOutput = document.getElementById("niveau-pH");
+            
             var morueNom = localStorage.getItem("nom-morue");
             var affiche = document.getElementById("morue-display");
             affiche.innerHTML += morueNom;
@@ -88,7 +90,7 @@
                     }
                 }
                 pH = ((pHInit * 100) + (montantBase * 14) + (montantAcide * 0)) / (100 + montantBase + montantAcide);
-                output.innerHTML = pH.toFixed(2) + " pH";
+                pHOutput.innerHTML = pH.toFixed(2) + " pH";
                 console.log(pH);
             }
         </script>
