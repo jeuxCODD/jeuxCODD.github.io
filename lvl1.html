@@ -75,13 +75,13 @@
             }
             function submitInput(){  
                 console.log(currentPuzzle);
-                if (currentPuzzle == 'valveAcide'){
+                if (currentPuzzle == 'A'){
                     var acide = parseFloat(document.getElementById("input-field").value);
                     console.log("acide level: " + acide);
                     if (!isNaN(acide)) {
                         montantAcide += acide;
                     }
-                } else if (currentPuzzle == 'valveBase'){
+                } else if (currentPuzzle == 'A'){
                     var base = parseFloat(document.getElementById("input-field").value);
                     if (!isNaN(base)) {
                     montantBase+= base;
