@@ -1,9 +1,38 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset = "UTF8">
+        <meta charset="UTF-8">
         <link rel="stylesheet" href="css/styleIndex.css" />
+        <!-- Howler js est un api qui facilite le son pour les jeux, il y a beaucoup de documentation sur le sujet. Visite howlerjs.com -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
         <title>DemieVieMorue</title>
+        <style>
+          .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+          }
+        
+          .modal.hidden {
+            display: none;
+          }
+        
+          .modal-content {
+            background: #222;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            color: white;
+          }
+        </style>
+
     </head>
     
     <body>
@@ -13,7 +42,7 @@
                 La demie vie d'une morue
                 <img src="images/logo.png" style="height: 45px; width: 50px; offset-left: 30px; align-image: right;" />
                 <a href="parametretn.html">
-                    <img class="parametres" img src="images/gear.png" style="height: 55px; width: 55px; margin-left: 30px; float: right;"/>
+                    <img class="parametres" src="images/gear.png" style="height: 55px; width: 55px; margin-left: 30px; float: right;"/>
                 </a>
             </h1>
         </div>
@@ -47,6 +76,34 @@
                 <input type="button" value="Entrez dans le jeu" onclick="nomCheck()">
             </form>
         </div>
+        <!-- Recherche un action de l'utilisateur pour pouvoir demarrer le son -->
+        <div id="themeModal" class="modal">
+          <div class="modal-content">
+            <h2>Cliquez n'importe où pour commencer le jeu</h2>
+          </div>
+        </div>
+        <script>
+            const themeModal = document.getElementById('themeModal');
+          
+            const themeMusic = new Howl({
+                src: ['audio/mainTheme.wav', 'audio/mainTheme.mp3', 'audio/mainTheme.m4a'], // change path if needed
+                volume: 1,
+                html5: true,
+                loop: true
+            });
+          
+            function startTheme() {
+                const id = themeMusic.play();
+                themeMusic.fade(0, 1, 3000, id);
+                themeModal.classList.add('hidden');
+                document.body.removeEventListener('click', startTheme);
+            }
+          
+            window.addEventListener('DOMContentLoaded', () => {
+                themeModal.classList.remove('hidden');
+                document.body.addEventListener('click', startTheme);
+            });
+        </script>
         <script src="indexScript.js"></script>
     </body>
 </html>
