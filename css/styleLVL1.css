@@ -36,7 +36,7 @@ h2{
 
 }
 .morueImage{
-    position: fixed;
+    position: absolute;
     z-index: 1000;
     width: 30px;
     height: 25px;
@@ -44,7 +44,7 @@ h2{
     top: 28%;
 }
 .niveau-pH{
-    position: fixed;
+    position: absolute;
     text-align: center;
     color: black;
     font-size: 2em;
