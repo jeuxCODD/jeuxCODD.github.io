@@ -11,7 +11,7 @@
           <h1>
                 Aidez <span id="morue-display"></span> à s'échapper! 
                 <a class="menu" href="index.html"><img src="https://www.iconpacks.net/icons/2/free-home-icon-2502-thumb.png" width=40px ></a>
-                <input type="image" src="images/audio.png" style="height: 55px; width: 55px; margin-left: 30px; float: right;" onclick="sonOffOn()"/>
+                <input type="image" src="images/audio.png" style="height: 55px; margin-left: 30px; float: right;" onclick="sonOffOn()"/>
           </h1> 
         </div>
         <div class=game id=game-zone style="width: 90%;">
@@ -70,6 +70,20 @@
                 loop: true
             });
             
+            const effetsSon = new Howl({
+                //au moin un source est nessesaire, si le premier ne fonctionne pas, howler va passer au deuxième, troisième etc
+                src: [''],
+                volume: 0.3,
+                //établis des section de l'audio source pour jouer, (debut, fin) en millisecondes.
+                sprite: {
+                    valve: [0, 2000],
+                    clique: [2000, 3000],
+                    eclabousse: [3000, 5000],
+                    gagner: [5000, 10000]
+                }
+            });
+            // pour jouer un sprite: 
+            //    effetsSon.play('valve');
             var pH = (Math.random() * 14).toFixed(2);
             while (pH < 8.5 && pH > 6.5){
                 pH = (Math.random() * 14).toFixed(2);
