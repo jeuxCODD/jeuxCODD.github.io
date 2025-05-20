@@ -52,6 +52,31 @@
     </map>
 
     <script>
+       //Fonction pour la musique background
+      function sonOffOn() {
+        // détermine si audio joue ou non
+        if (sonJoue) {
+          themeMusic.mute(true, idTheme);
+          sonJoue = false
+          document.getElementById('bouttonMute').src='images/audioOff.png'
+        } else {
+           themeMusic.mute(false, idTheme);
+           sonJoue = true;
+           document.getElementById('bouttonMute').src='images/audio.png';
+        }
+      }
+            
+            //musique
+            let idTheme;
+            let sonJoue = true;
+            const themeMusic = new Howl({
+                src: ['audio/mainTheme.wav', 'audio/mainTheme.mp3', 'audio/mainTheme.m4a'], // change path if needed
+                volume: 0.5,
+                autoplay: true,
+                html5: true,
+                loop: true
+            });
+      
       function showPopup(type) {
         const content = {
           coupe: "Utilisez le couteau pour découper la morue en filets...",
