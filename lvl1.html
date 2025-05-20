@@ -142,8 +142,8 @@
                 console.log(pH);
             }
             function submitPH(pH){
-                
-                if (pH>= 7 || pH<=8) {
+                var phCheck = document.getElementbyId("pH");
+                if ( (phCheck>= 7) || (phCheck<=8) ) {
                     var phPopup = document.getelementById("phBoiteBon");
                     phPopup.style.display = "block";
                     
