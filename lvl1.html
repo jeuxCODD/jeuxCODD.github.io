@@ -7,7 +7,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
     </head>
     <body>
-        <div class=header>  
+        <div class=header>
+            <!-- Div du header/page titre avec le nom du morue-->
           <h1>
                 Aidez <span id="morue-display"></span> à s'échapper! 
                 <a class="menu" href="index.html"><img src="https://www.iconpacks.net/icons/2/free-home-icon-2502-thumb.png" width=40px ></a>
@@ -33,12 +34,14 @@
                     coords="504,130,518,133,532,132,546,129,557,124,569,121,580,121,590,125,596,126,590,139,577,150,560,157,540,158,528,169,513,195,496,184,516,148,509,139" shape="poly">
             </map>
         </div>
+        <!-- Popup/boîte pour entrer les valeurs et les soumettres -->
         <div id="input-container" class="input-box" style= "display: none">
             <input type="button" id="btnX" onclick="fermerBox()" value="x">
             <label class= "labelInput" id="input-label">Entrez une valeur:</label>
             <input type="number" id="input-field" min="0">
             <button class="inputSubmit" onclick="submitInput()">Valider</button>
         </div>
+        <!-- Popup/boîte après finir le jeux pour aller à niveau 2-->
         <div id="input-container-pH" class="input-box-pH" style= "display: none">
             <input type="button" id="btnX" onclick="fermerBoxPH()" value="x">
             <h2 class="messageFini" id="messageFini">Tu as terminer!</h2>
@@ -50,6 +53,7 @@
         <img src="images/morue.png" style="height:25px; width:30px">
         </div>
         <script>
+             // Fonction pour fermer la boîte avec un bouton "x"
             function fermerBox(){
                 const fermerBoite = document.getElementById("input-container");
                 fermerBoite.style.display = "none";
@@ -58,8 +62,9 @@
                 const fermerBoite = document.getElementById("input-container-pH");
                 fermerBoite.style.display = "none";
             }
+            //Fonction pour la musique background
             function sonOffOn() {
-                //determine si audio joue ou non
+                // détermine si audio joue ou non
                 if (sonJoue) {
                     themeMusic.mute(true, idTheme);
                     sonJoue = true
@@ -112,45 +117,54 @@
             var montantBase = 0;
             var pHInit = pH;
             pHOutput.innerHTML = pH + " pH";
-
+            
+              // Fonction qui montre un popup/boîte dépendant de valve A ou B
             function openDiv(puzzleId) {
                 currentPuzzle = puzzleId;
                 var div = document.getElementById("input-container");
                 div.style.display = "block";
+                // Valve A, acide
                 if (currentPuzzle == 'A') {
                     document.getElementById("input-label").textContent = "Entrez un montant de moles d'acide";
                     document.getElementById("input-field").value = "";
+                // Valve B, mols
                 } else if (currentPuzzle == 'B') {
                     document.getElementById("input-label").textContent = "Entrez un montant de moles de base";
                     document.getElementById("input-field").value = "";
                 }
             }
+            // Fonction pour soumettre la réponse
             function submitInput(){  
                 console.log(currentPuzzle);
+                // Valve A, acide
                 if (currentPuzzle == 'A'){
                     var acide = parseFloat(document.getElementById("input-field").value);
                     console.log("acide level: " + acide);
                     if (!isNaN(acide)) {
                         montantAcide += acide;
                     }
+                    // Valve B, mols
                 } else if (currentPuzzle == 'B'){
                     var base = parseFloat(document.getElementById("input-field").value);
                     if (!isNaN(base)) {
                     montantBase+= base;
                     }
                 }
+                // Calcul le pH
                 pH = ((pHInit * 100) + (montantBase * 14) + (montantAcide * 0)) / (100 + montantBase + montantAcide);
                 pHOutput.innerHTML = pH.toFixed(2) + " pH";
                 console.log(pH);
             }
-
+                // Fonction pour soumettre tes réponses
             function submitPH(){
                 var phCheck = ((pHInit * 100) + (montantBase * 14) + (montantAcide * 0)) / (100 + montantBase + montantAcide);
                 var div1 = document.getElementById("input-container-pH");
                 div1.style.display = "block";
+                // Vérifier si le pH est bon
                 if (phCheck >=7 && phCheck <=8) {
                     document.getElementById("messageFini").textContent = "BRAVO! Tu as sauvé la morue!";
                     document.getElementById("inputFini").textContent = "CONTINUER!";
+                // Vérifier si le pH n'est pas bon
                 } else {
                     document.getElementById("messageFini").textContent = "Pas de Chance! Tu n'a pas sauver la morue!";
                     document.getElementById("inputFini").textContent = "Recommencer!";
