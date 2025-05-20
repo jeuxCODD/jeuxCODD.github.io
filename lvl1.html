@@ -141,11 +141,10 @@
                 pHOutput.innerHTML = pH.toFixed(2) + " pH";
                 console.log(pH);
             }
-            function submitPH(){
+            function submitPH(pH){
                 if (pH>= 7 || pH<=8) {
                     var phPopup = document.getelementById("phBoiteBon");
-                    
-
+                    phPopup.style.display = "block";
                     
                 } else {
                     
