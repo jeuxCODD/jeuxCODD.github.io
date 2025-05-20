@@ -118,7 +118,7 @@
             var montantAcide = 0;
             var montantBase = 0;
             var pHInit = pH;
-            pHOutput.innerHTML = pH + " pH";
+            pHOutput.innerHTML = pH + " pH (100 mol)";
             
               // Fonction qui montre un popup/boîte dépendant de valve A ou B
             function openDiv(puzzleId) {
@@ -154,7 +154,7 @@
                 }
                 // Calcul le pH
                 pH = ((pHInit * 100) + (montantBase * 14) + (montantAcide * 0)) / (100 + montantBase + montantAcide);
-                pHOutput.innerHTML = pH.toFixed(2) + " pH";
+                pHOutput.innerHTML = pH.toFixed(2) + " pH (" + (100 + montantAcide + montantBase) + (" mol)";
                 console.log(pH);
             }
                 // Fonction pour soumettre tes réponses
