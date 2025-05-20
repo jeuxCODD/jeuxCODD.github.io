@@ -40,7 +40,7 @@
             <button class="inputSubmit" onclick="submitInput()">Valider</button>
         </div>
         <div id="input-container-pH" class="input-box-pH" style= "display: none">
-            <input type="button" id="btnX" onclick="fermerBox()" value="x">
+            <input type="button" id="btnX" onclick="fermerBoxPH()" value="x">
             <h2 class="messageFini" id="messageFini">Tu as terminer!</h2>
             <button class="inputFini" id="inputFini" onclick="window.location.assign("lvl2.html")">Continuer</button>
         </div>
@@ -53,7 +53,10 @@
             function fermerBox(){
                 const fermerBoite = document.getElementById("input-container");
                 fermerBoite.style.display = "none";
-            
+            }
+            function fermerBoxPH(){
+                const fermerBoite = document.getElementById("input-container-pH");
+                fermerBoite.style.display = "none";
             }
             function sonOffOn() {
                 //determine si audio joue ou non
