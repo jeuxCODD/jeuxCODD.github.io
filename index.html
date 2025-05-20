@@ -79,13 +79,14 @@
             function sonOffOn() {
                 //determine si audio joue ou non
                 if (sonJoue) {
+                     themeMusic.mute(false, idTheme);
+                    sonJoue = true;
+                    document.getElementById('bouttonMute').src='images/audio.png'
+                } else {
                     themeMusic.mute(true, idTheme);
                     sonJoue = false
                     document.getElementById('bouttonMute').src='images/audioOff.png'
-                } else {
-                    themeMusic.mute(false, idTheme);
-                    sonJoue = true;
-                    document.getElementById('bouttonMute').src='images/audio.png'
+
                 }
             }
 
