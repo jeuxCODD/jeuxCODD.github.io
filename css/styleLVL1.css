@@ -56,12 +56,12 @@ h2{
     text-align: center;
     position: fixed;
     display: inline-block;
-    background-color: red;
+    background-color: #AFFB98;
     border-radius: 10px;
     border: 8px solid;
-    border-color: green;
+    border-color: #010138;
     width: 23%;
-    height: 12%;
+    height: 32%;
     top: 32%;
     left: 32%;
     z-index: 10;
