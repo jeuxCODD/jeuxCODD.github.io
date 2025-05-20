@@ -6,13 +6,14 @@
         <!-- Howler js est un api qui facilite le son pour les jeux, il y a beaucoup de documentation sur le sujet. Visite howlerjs.com -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
         <title>DemieVieMorue</title>
-        <style>
+        <style> 
+           /*à integrer dans le css */
           .modal {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
             background: rgba(0, 0, 0, 0.7);
             display: flex;
             align-items: center;
@@ -26,7 +27,7 @@
         
           .modal-content {
             background: #222;
-            padding: 2rem;
+            padding: 32px;
             border-radius: 8px;
             text-align: center;
             color: white;
@@ -41,8 +42,9 @@
                 <!--Titre-->
                 La demie vie d'une morue
                 <img src="images/logo.png" style="height: 45px; width: 50px; offset-left: 30px; align-image: right;" />
+                <input type="button" value="Entrez dans le jeu" onclick="sonOffOn()">
                 <a href="parametretn.html">
-                    <img class="parametres" src="images/gear.png" style="height: 55px; width: 55px; margin-left: 30px; float: right;"/>
+                    <img class="parametres" src="images/audio.png" style="height: 55px; width: 55px; margin-left: 30px; float: right;"/>
                 </a>
             </h1>
         </div>
@@ -84,7 +86,8 @@
         </div>
         <script>
             const themeModal = document.getElementById('themeModal');
-          
+            let idTheme;
+            let sonJoue = true;
             const themeMusic = new Howl({
                 src: ['audio/mainTheme.wav', 'audio/mainTheme.mp3', 'audio/mainTheme.m4a'], // change path if needed
                 volume: 1,
@@ -93,8 +96,8 @@
             });
           
             function startTheme() {
-                const id = themeMusic.play();
-                themeMusic.fade(0, 1, 3000, id);
+                idTheme = themeMusic.play();
+                themeMusic.fade(0, 1, 3000, idTheme);
                 themeModal.classList.add('hidden');
                 document.body.removeEventListener('click', startTheme);
             }
@@ -103,6 +106,17 @@
                 themeModal.classList.remove('hidden');
                 document.body.addEventListener('click', startTheme);
             });
+            
+            function sonOffOn() {
+                //determine si audio joue ou non
+                if (sonJoue) {
+                    themeMusic.mute(true, idTheme);
+                    sonJoue = false
+                } else {
+                    themeMusic.mute(false, idTheme);
+                    sonJoue = true;
+                }
+            }
         </script>
         <script src="indexScript.js"></script>
     </body>
