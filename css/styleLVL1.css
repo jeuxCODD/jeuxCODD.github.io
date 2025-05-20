@@ -13,6 +13,7 @@ h2{
 .game{
     text-align: center;
     position: relative;
+    z-index: -1;
 }
 .input-box{
     text-align: center;
