@@ -39,3 +39,6 @@ h2{
     position: absolute;
     z-index: 1000;
 }
+.niveau-ph{
+    position: absolute;
+}
