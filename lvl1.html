@@ -39,6 +39,11 @@
             <input type="number" id="input-field" min="0">
             <button class="inputSubmit" onclick="submitInput()">Valider</button>
         </div>
+        <div id="input-container-pH" class="input-box-pH" style= "display: none">
+            <input type="button" id="btnX" onclick="fermerBox()" value="x">
+            <h2 class="messageFini" id="messageFini">Tu as terminer!</h2>
+            <button class="inputFini" id="inputFini" onclick="submitInput()">Continuer</button>
+        </div>
         <div class="niveau-pH" id="niveau-pH" >
         </div>
         <div class="morueImage">
@@ -138,10 +143,14 @@
 
             function submitPH(){
                 var phCheck = ((pHInit * 100) + (montantBase * 14) + (montantAcide * 0)) / (100 + montantBase + montantAcide);
-                if (phCheck >=7) || (phCheck <=8) {
                 var div1 = document.getElementById("input-container-pH");
                 div1.style.display = "block";
-            } else {
+                if (phCheck >=7) || (phCheck <=8) {
+                    document.getElementById("messageFini").textContent = "BRAVO! Tu as sauvé la morue!";
+                    document.getElementById("inputFini").textContent = "CONTINUER!";
+                } else {
+                    document.getElementById("messageFini").textContent = "Pas de Chance! Tu n'a pas sauver la morue!";
+                    document.getElementById("inputFini").textContent = "Recommencer!";
                 }
         </script>
     </body>
