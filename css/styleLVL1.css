@@ -35,3 +35,7 @@ h2{
     cursor: pointer;
 
 }
+.morueImage{
+    position: absolute;
+    z-index: 1000;
+}
