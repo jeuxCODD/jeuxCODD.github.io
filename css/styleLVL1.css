@@ -38,7 +38,10 @@ h2{
 .morueImage{
     position: absolute;
     z-index: 1000;
+    width: 30px;
+    height: 25px;
 }
 .niveau-ph{
     position: absolute;
+    text-align: center;
 }
