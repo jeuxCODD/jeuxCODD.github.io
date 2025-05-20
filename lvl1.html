@@ -19,7 +19,7 @@
             <img src="images/image.png" usemap="#image-map">
             
             <map name="image-map">
-                <area target="_blank" alt="Validation" title="Valide?" onclick="submitPH()"
+                <area target="_blank" alt="Validation" title="Valide?" onclick="submitPH(pH)"
                     coords="407,214,410,223,403,228,395,232,387,229,382,221,280,220,280,214,383,214,386,208,398,205,404,209,404,209" shape="poly">
                 <area target="_blank" alt="Acide" title="Acide" onclick="openDiv('A')"
                     coords="133,246,160,296,170,288,163,274,171,271,168,266,175,262,183,270,194,266,176,238,167,243,172,252,163,258,161,254,152,257,142,242" shape="poly">
@@ -142,6 +142,7 @@
                 console.log(pH);
             }
             function submitPH(pH){
+                
                 if (pH>= 7 || pH<=8) {
                     var phPopup = document.getelementById("phBoiteBon");
                     phPopup.style.display = "block";
