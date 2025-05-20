@@ -48,4 +48,7 @@ h2{
     text-align: center;
     color: black;
     font-size: 2em;
+    z-index: 100;
+    left: 43%;
+    bottom: 36%;
 }
