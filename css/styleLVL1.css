@@ -52,3 +52,17 @@ h2{
     left: 40%;
     bottom: 37%;
 }
+.input-box-pH{
+    text-align: center;
+    position: fixed;
+    display: inline-block;
+    background-color: red;
+    border-radius: 10px;
+    border: 8px solid;
+    border-color: green;
+    width: 23%;
+    height: 12%;
+    top: 32%;
+    left: 32%;
+    z-index: 10;
+}
