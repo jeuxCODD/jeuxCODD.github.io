@@ -135,6 +135,14 @@
                 pHOutput.innerHTML = pH.toFixed(2) + " pH";
                 console.log(pH);
             }
+
+            function submitPH(){
+                var phCheck = ((pHInit * 100) + (montantBase * 14) + (montantAcide * 0)) / (100 + montantBase + montantAcide);
+                if (phCheck >=7) || (phCheck <=8) {
+                var div1 = document.getElementById("input-container-pH");
+                div1.style.display = "block";
+            } else {
+                }
         </script>
     </body>
 </html>
