@@ -39,6 +39,12 @@
             <input type="number" id="input-field" min="0">
             <button class="inputSubmit" onclick="submitInput()">Valider</button>
         </div>
+
+        <div id="phBoiteBon" class="input-box-pH" stlye="display: none">
+            <h1>Tu as sauver le morue! </h1>
+            <button class="inputSubmit" onclick="lvl2()">Continuer au prochaine niveau</button>
+        </div>
+            
         <div class="niveau-pH" id="niveau-pH" >
         </div>
         <div class="morueImage">
@@ -134,6 +140,15 @@
                 pH = ((pHInit * 100) + (montantBase * 14) + (montantAcide * 0)) / (100 + montantBase + montantAcide);
                 pHOutput.innerHTML = pH.toFixed(2) + " pH";
                 console.log(pH);
+            }
+            function submitPH(){
+                if (pH>= 7 || pH<=8) {
+                    var phPopup = document.getelementById("phBoiteBon");
+                    
+
+                    
+                } else {
+                    
             }
         </script>
     </body>
