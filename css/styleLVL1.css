@@ -42,11 +42,9 @@ h2{
     height: 25px;
     border: 3px black;
 }
-imageMorue{
-    heigth: 100%;
-    width: 100%;
-}
 .niveau-pH{
     position: absolute;
     text-align: center;
+    color: black;
+    font-size: 2em;
 }
