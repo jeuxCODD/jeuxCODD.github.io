@@ -98,7 +98,8 @@
                     valve: [0, 2000],
                     clique: [2000, 3000],
                     eclabousse: [3000, 5000],
-                    gagner: [5000, 10000]
+                    gagner: [5000, 10000],
+                    perd: [10000, 11000]
                 }
             });
             // pour jouer un sprite: 
@@ -126,6 +127,7 @@
                 currentPuzzle = puzzleId;
                 var div = document.getElementById("input-container");
                 div.style.display = "block";
+                effetsSon.play('valve');
                 // Valve A, acide
                 if (currentPuzzle == 'A') {
                     document.getElementById("input-label").textContent = "Entrez un montant de moles d'acide";
@@ -139,6 +141,7 @@
             // Fonction pour soumettre la réponse
             function submitInput(){  
                 console.log(currentPuzzle);
+                effetsSon.play('clique');
                 // Valve A, acide
                 if (currentPuzzle == 'A'){
                     var acide = parseFloat(document.getElementById("input-field").value);
@@ -160,15 +163,18 @@
             }
                 // Fonction pour soumettre tes réponses
             function submitPH(){
+                effetsSon.play('eclabousse');
                 var phCheck = ((pHInit * 100) + (montantBase * 14) + (montantAcide * 0)) / (100 + montantBase + montantAcide);
                 var div1 = document.getElementById("input-container-pH");
                 div1.style.display = "block";
                 // Vérifier si le pH est bon
                 if (phCheck >=7 && phCheck <=8) {
-                    document.getElementById("messageFini").textContent = "BRAVO! Tu as sauvé la morue!";
+                    effetsSon.play('gagner');
+                    document.getElementById("messageFini").textContent = "BRAVO! Vous avez sauvé votre morue!<br><br><strong>Nouveau objectif:</strong> Cuisiner <span id="morue-display"></span>";
                     document.getElementById("inputFini").textContent = "CONTINUER!";
                 // Vérifier si le pH n'est pas bon
                 } else {
+                    effetsSon.play('perd');
                     document.getElementById("messageFini").textContent = "Pas de Chance! Tu n'a pas sauver la morue!";
                     document.getElementById("inputFini").textContent = "Recommencer!";
                     document.getElementById("inputFini").onclick = () => location.reload();
