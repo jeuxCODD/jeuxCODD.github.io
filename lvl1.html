@@ -57,10 +57,12 @@
         <script>
              // Fonction pour fermer la boîte avec un bouton "x"
             function fermerBox(){
+                effetsSon.play('clique');
                 const fermerBoite = document.getElementById("input-container");
                 fermerBoite.style.display = "none";
             }
             function fermerBoxPH(){
+                effetsSon.play('clique');
                 const fermerBoite = document.getElementById("input-container-pH");
                 fermerBoite.style.display = "none";
             }
