@@ -93,13 +93,13 @@
                 //au moin un source est nessesaire, si le premier ne fonctionne pas, howler va passer au deuxième, troisième etc
                 src: ['audio/effetsMor.m4a', 'audio/effetsMor.mp3'],
                 volume: 0.9,
-                //établis des section de l'audio source pour jouer, (debut, fin) en millisecondes.
+                //établis des section de l'audio source pour jouer, (debut, durée) en millisecondes.
                 sprite: {
                     eclabousse: [0, 2000],
-                    clique: [2000, 3000],
-                    valve: [3000, 4000],
-                    perd: [4000, 8000],
-                    gagner: [8000, 12000]
+                    clique: [2000, 1000],
+                    valve: [3000, 1000],
+                    perd: [4000, 4000],
+                    gagner: [8000, 4000]
                 }
             });
             // pour jouer un sprite: 
@@ -123,17 +123,17 @@
             
               // Fonction qui montre un popup/boîte dépendant de valve A ou B
             function openDiv(puzzleId) {
-                effetsSon.play('valve')
                 currentPuzzle = puzzleId;
                 var div = document.getElementById("input-container");
                 div.style.display = "block";
-                effetsSon.play('valve');
                 // Valve A, acide
                 if (currentPuzzle == 'A') {
+                    effetsSon.play('valve')
                     document.getElementById("input-label").textContent = "Entrez un montant de moles d'acide";
                     document.getElementById("input-field").value = "";
                 // Valve B, mols
                 } else if (currentPuzzle == 'B') {
+                    effetsSon.play('valve')
                     document.getElementById("input-label").textContent = "Entrez un montant de moles de base";
                     document.getElementById("input-field").value = "";
                 }
@@ -141,19 +141,20 @@
             // Fonction pour soumettre la réponse
             function submitInput(){  
                 console.log(currentPuzzle);
-                effetsSon.play('clique');
                 // Valve A, acide
                 if (currentPuzzle == 'A'){
                     var acide = parseFloat(document.getElementById("input-field").value);
                     console.log("acide level: " + acide);
                     if (!isNaN(acide)) {
+                        effetsSon.play('clique');
                         montantAcide += acide;
                     }
                     // Valve B, mols
                 } else if (currentPuzzle == 'B'){
                     var base = parseFloat(document.getElementById("input-field").value);
                     if (!isNaN(base)) {
-                    montantBase+= base;
+                        effetsSon.play('clique');
+                        montantBase+= base;
                     }
                 }
                 // Calcul le pH
