@@ -170,8 +170,8 @@
                 // Vérifier si le pH est bon
                 if (phCheck >=7 && phCheck <=8) {
                     effetsSon.play('gagner');
-                    document.getElementById("messageFini").textContent = "BRAVO! Vous avez sauvé votre morue!<br><br><strong>Nouveau objectif:</strong> Cuisiner la morue!";
-                    document.getElementById("inputFini").textContent = "CONTINUER!";
+                    document.getElementById("messageFini").innerHTML = "BRAVO! Vous avez sauvé votre morue!<br><br><strong>Nouveau objectif:</strong> Cuisiner la morue!";
+                    document.getElementById("inputFini").innerHTML = "<i>CONTINUER!</i>";
                 // Vérifier si le pH n'est pas bon
                 } else {
                     effetsSon.play('perd');
