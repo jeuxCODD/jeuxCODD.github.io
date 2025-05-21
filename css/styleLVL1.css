@@ -2,6 +2,7 @@ body{
     background-image: url("https://img.freepik.com/free-photo/abstract-black-gray-grunge-texture-pattern-background_84443-3248.jpg?semt=ais_hybrid&w=740");
     background-size: cover;
     background-repeat: no-repeat;
+    overflow: hidden; /* Caches les barres de défillements */
 }
 h1{
     color: black;
