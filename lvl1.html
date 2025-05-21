@@ -91,15 +91,15 @@
             
             const effetsSon = new Howl({
                 //au moin un source est nessesaire, si le premier ne fonctionne pas, howler va passer au deuxième, troisième etc
-                src: [''],
-                volume: 0.3,
+                src: ['audio/effetsMor.m4a', 'audio/effetsMor.mp3'],
+                volume: 0.9,
                 //établis des section de l'audio source pour jouer, (debut, fin) en millisecondes.
                 sprite: {
-                    valve: [0, 2000],
+                    eclabousse: [0, 2000],
                     clique: [2000, 3000],
-                    eclabousse: [3000, 5000],
-                    gagner: [5000, 10000],
-                    perd: [10000, 11000]
+                    valve: [3000, 4000],
+                    perd: [4000, 8000],
+                    gagner: [8000, 12000]
                 }
             });
             // pour jouer un sprite: 
