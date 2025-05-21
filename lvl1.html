@@ -122,6 +122,7 @@
             
               // Fonction qui montre un popup/boîte dépendant de valve A ou B
             function openDiv(puzzleId) {
+                effetsSon.play('valve')
                 currentPuzzle = puzzleId;
                 var div = document.getElementById("input-container");
                 div.style.display = "block";
