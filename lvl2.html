@@ -1,5 +1,9 @@
 <html>
   <head>
+    <meta charset="UTF-8">
+    <title>DemieVieMorue</title>
+    <!-- Howler js est un api qui facilite le son pour les jeux, il y a beaucoup de documentation sur le sujet. Visite howlerjs.com -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
     <style>
       .popup-overlay {
         position: fixed;
@@ -51,30 +55,25 @@
       <area target="_blank" alt="fini" title="fini" coords="562,319,566,394,802,393,820,347,783,316" shape="poly" onclick="showPopup('assiete')">
     </map>
 
-    <script>
-       //Fonction pour la musique background
-      function sonOffOn() {
-        // détermine si audio joue ou non
-        if (sonJoue) {
-          themeMusic.mute(true, idTheme);
-          sonJoue = false
-          document.getElementById('bouttonMute').src='images/audioOff.png'
-        } else {
-           themeMusic.mute(false, idTheme);
-           sonJoue = true;
-           document.getElementById('bouttonMute').src='images/audio.png';
-        }
-      }
-            
+    <script>       
             //musique
             let idTheme;
-            let sonJoue = true;
             const themeMusic = new Howl({
-                src: ['audio/mainTheme.wav', 'audio/mainTheme.mp3', 'audio/mainTheme.m4a'], // change path if needed
+                src: ['audio/jazzAuResto.wav', 'audio/jazzAuResto.mp3', 'audio/jazzAuResto.m4a'],
                 volume: 0.5,
                 autoplay: true,
                 html5: true,
                 loop: true
+            });
+
+            const effetsSon = new Howl({
+            //au moin un source est nessesaire, si le premier ne fonctionne pas, howler va passer au deuxième, troisième etc
+              src: ['audio/effetsMor.m4a', 'audio/effetsMor.mp3'],
+              volume: 0.9,
+              //établis des section de l'audio source pour jouer, (debut, durée) en millisecondes.
+              sprite: {
+                  clique: [2000, 1000]
+                }
             });
       
       function showPopup(type) {
@@ -85,12 +84,13 @@
           frigo: "Conservez les restes au réfrigérateur...",
           assiete: "Terminez avec la cuisine, tu peut mangez..."
         };
-        
+        effetsSon.play('clique');
         document.getElementById("popup-text").innerHTML = content[type];
         document.getElementById("popup").style.display = "block";
       }
 
       function closePopup() {
+        effetsSon.play('clique');
         document.getElementById("popup").style.display = "none";
       }
     </script>
